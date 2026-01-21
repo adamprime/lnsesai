@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createServerSupabaseClient } from "@/lib/supabase-server";
+import { EditContentUnitForm } from "@/components/admin/EditContentUnitForm";
+import { ManageTagsSection } from "@/components/admin/ManageTagsSection";
+import { EditComponentCard } from "@/components/admin/EditComponentCard";
 
 type ContentUnit = {
   id: string;
@@ -69,10 +72,17 @@ async function getContentUnit(id: string) {
     )
     .eq("content_unit_id", id);
 
+  // Get all tags for the dropdown
+  const { data: allTags } = await supabase
+    .from("tags")
+    .select("id, name, slug")
+    .order("name");
+
   return {
     unit: unit as ContentUnit,
     components: (components as ContentComponent[]) || [],
     tags: (unitTags as unknown as ContentUnitTag[]) || [],
+    allTags: (allTags as { id: string; name: string; slug: string }[]) || [],
   };
 }
 
@@ -88,7 +98,7 @@ export default async function ContentDetailPage({
     notFound();
   }
 
-  const { unit, components, tags } = data;
+  const { unit, components, tags, allTags } = data;
 
   return (
     <div className="p-6 max-w-5xl mx-auto">
@@ -118,103 +128,24 @@ export default async function ContentDetailPage({
         </div>
       </div>
 
-      {/* Metadata */}
-      <div className="bg-gray-800 rounded-lg p-6 mb-6">
-        <h2 className="text-lg font-semibold mb-4">Metadata</h2>
-        <div className="grid md:grid-cols-2 gap-4 text-sm">
-          <div>
-            <span className="text-gray-400">Publication Year:</span>{" "}
-            <span>{unit.publication_year || "Unknown"}</span>
-          </div>
-          <div>
-            <span className="text-gray-400">Created:</span>{" "}
-            <span>{new Date(unit.created_at).toLocaleDateString()}</span>
-          </div>
-          <div>
-            <span className="text-gray-400">Updated:</span>{" "}
-            <span>{new Date(unit.updated_at).toLocaleDateString()}</span>
-          </div>
-          <div>
-            <span className="text-gray-400">Source Files:</span>{" "}
-            <span>{unit.source_files?.join(", ") || "None"}</span>
-          </div>
-        </div>
-      </div>
+      {/* Metadata - Editable */}
+      <EditContentUnitForm contentUnit={unit} />
 
-      {/* Tags */}
-      <div className="bg-gray-800 rounded-lg p-6 mb-6">
-        <h2 className="text-lg font-semibold mb-4">
-          Tags ({tags.length})
-        </h2>
-        <div className="flex flex-wrap gap-2">
-          {tags.map((t) => (
-            <span
-              key={t.tag_id}
-              className={`px-3 py-1 rounded flex items-center gap-2 ${
-                t.weight === 3
-                  ? "bg-yellow-600 text-yellow-100"
-                  : t.weight === 2
-                    ? "bg-blue-600 text-blue-100"
-                    : "bg-gray-600 text-gray-200"
-              }`}
-            >
-              {t.tags.name}
-              <span className="text-xs opacity-75">
-                (weight: {t.weight})
-              </span>
-            </span>
-          ))}
-          {tags.length === 0 && (
-            <span className="text-gray-500">No tags assigned</span>
-          )}
-        </div>
-      </div>
+      {/* Tags - Editable */}
+      <ManageTagsSection
+        contentUnitId={unit.id}
+        assignedTags={tags}
+        allTags={allTags}
+      />
 
-      {/* Components */}
+      {/* Components - Editable */}
       <div className="bg-gray-800 rounded-lg p-6">
         <h2 className="text-lg font-semibold mb-4">
           Components ({components.length})
         </h2>
         <div className="space-y-4">
           {components.map((comp) => (
-            <div
-              key={comp.id}
-              className="border border-gray-700 rounded-lg p-4"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2">
-                  <span
-                    className={`px-2 py-0.5 rounded text-xs ${
-                      comp.component_type === "summary"
-                        ? "bg-purple-600"
-                        : comp.component_type === "theme"
-                          ? "bg-blue-600"
-                          : "bg-gray-600"
-                    }`}
-                  >
-                    {comp.component_type}
-                  </span>
-                  <span className="font-medium">
-                    {comp.title || `${comp.component_type} #${comp.display_order}`}
-                  </span>
-                </div>
-                {comp.token_count && (
-                  <span className="text-gray-500 text-sm">
-                    {comp.token_count} tokens
-                  </span>
-                )}
-              </div>
-              <div className="text-gray-300 text-sm max-h-40 overflow-y-auto whitespace-pre-wrap">
-                {comp.content.slice(0, 500)}
-                {comp.content.length > 500 && "..."}
-              </div>
-              {comp.explanation && (
-                <div className="mt-2 text-sm">
-                  <span className="text-gray-400">Explanation: </span>
-                  <span className="text-gray-300">{comp.explanation.slice(0, 200)}...</span>
-                </div>
-              )}
-            </div>
+            <EditComponentCard key={comp.id} component={comp} />
           ))}
           {components.length === 0 && (
             <p className="text-gray-500">No components yet</p>
