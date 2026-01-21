@@ -2,6 +2,7 @@ import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { isAdminEmail } from "@/lib/admin";
 
 export default async function DashboardPage() {
   const user = await currentUser();
@@ -10,6 +11,9 @@ export default async function DashboardPage() {
     redirect("/sign-in");
   }
 
+  const userEmail = user.emailAddresses[0]?.emailAddress;
+  const showAdminLink = isAdminEmail(userEmail);
+
   return (
     <main className="min-h-screen bg-gray-900 text-white">
       <nav className="flex justify-between items-center p-6 border-b border-gray-800">
@@ -17,6 +21,14 @@ export default async function DashboardPage() {
           Lnses
         </Link>
         <div className="flex items-center gap-4">
+          {showAdminLink && (
+            <Link
+              href="/admin"
+              className="px-3 py-1 bg-purple-600 hover:bg-purple-700 rounded text-sm transition"
+            >
+              Admin
+            </Link>
+          )}
           <span className="text-gray-400">
             {user.firstName || user.emailAddresses[0]?.emailAddress}
           </span>
