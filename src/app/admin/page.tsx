@@ -45,7 +45,7 @@ export default async function AdminDashboard() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
         <Link
           href="/admin/content"
           className="bg-gray-800 rounded-lg p-6 hover:bg-gray-750 transition block"
@@ -65,6 +65,44 @@ export default async function AdminDashboard() {
             View and organize tags used to categorize content
           </p>
         </Link>
+      </div>
+
+      {/* Documentation Section */}
+      <div className="border-t border-gray-700 pt-8">
+        <h2 className="text-xl font-semibold mb-4">Documentation</h2>
+        <p className="text-gray-400 mb-6">
+          New to the admin dashboard? Start here to understand how everything works.
+        </p>
+        <div className="grid md:grid-cols-4 gap-4">
+          <Link
+            href="/admin/docs"
+            className="bg-gray-800 rounded-lg p-4 hover:bg-gray-750 transition block"
+          >
+            <h3 className="font-semibold mb-1">Overview</h3>
+            <p className="text-gray-400 text-sm">Quick start guide</p>
+          </Link>
+          <Link
+            href="/admin/docs/content"
+            className="bg-gray-800 rounded-lg p-4 hover:bg-gray-750 transition block"
+          >
+            <h3 className="font-semibold mb-1">Content Units</h3>
+            <p className="text-gray-400 text-sm">Books, articles, videos</p>
+          </Link>
+          <Link
+            href="/admin/docs/tags"
+            className="bg-gray-800 rounded-lg p-4 hover:bg-gray-750 transition block"
+          >
+            <h3 className="font-semibold mb-1">Tags & Weights</h3>
+            <p className="text-gray-400 text-sm">The 1-2-3 system</p>
+          </Link>
+          <Link
+            href="/admin/docs/markdown"
+            className="bg-gray-800 rounded-lg p-4 hover:bg-gray-750 transition block"
+          >
+            <h3 className="font-semibold mb-1">Markdown Guide</h3>
+            <p className="text-gray-400 text-sm">Formatting content</p>
+          </Link>
+        </div>
       </div>
     </div>
   );

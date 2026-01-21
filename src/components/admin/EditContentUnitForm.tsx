@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { HelpTooltip } from "./HelpTooltip";
 
 type ContentUnit = {
   id: string;
@@ -123,7 +124,10 @@ export function EditContentUnitForm({ contentUnit }: Props) {
     return (
       <div className="bg-gray-800 rounded-lg p-6 mb-6">
         <div className="flex justify-between items-start mb-4">
-          <h2 className="text-lg font-semibold">Metadata</h2>
+          <h2 className="text-lg font-semibold">
+            Metadata
+            <HelpTooltip href="/admin/docs/content" label="Learn about content types" />
+          </h2>
           <button
             onClick={() => setIsEditing(true)}
             className="px-3 py-1 bg-blue-600 rounded hover:bg-blue-700 transition text-sm"

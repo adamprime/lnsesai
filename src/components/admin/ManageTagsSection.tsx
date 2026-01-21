@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { HelpTooltip } from "./HelpTooltip";
 
 type Tag = {
   id: string;
@@ -123,7 +124,10 @@ export function ManageTagsSection({
   return (
     <div className="bg-gray-800 rounded-lg p-6 mb-6">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold">Tags ({assignedTags.length})</h2>
+        <h2 className="text-lg font-semibold">
+          Tags ({assignedTags.length})
+          <HelpTooltip href="/admin/docs/tags#weight-system" label="Learn about tag weights" />
+        </h2>
         {!isAdding && (
           <button
             onClick={() => setIsAdding(true)}

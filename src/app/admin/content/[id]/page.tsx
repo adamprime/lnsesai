@@ -4,6 +4,7 @@ import { createServerSupabaseClient } from "@/lib/supabase-server";
 import { EditContentUnitForm } from "@/components/admin/EditContentUnitForm";
 import { ManageTagsSection } from "@/components/admin/ManageTagsSection";
 import { EditComponentCard } from "@/components/admin/EditComponentCard";
+import { HelpTooltip } from "@/components/admin/HelpTooltip";
 
 type ContentUnit = {
   id: string;
@@ -142,6 +143,7 @@ export default async function ContentDetailPage({
       <div className="bg-gray-800 rounded-lg p-6">
         <h2 className="text-lg font-semibold mb-4">
           Components ({components.length})
+          <HelpTooltip href="/admin/docs/components" label="Learn about components" />
         </h2>
         <div className="space-y-4">
           {components.map((comp) => (
