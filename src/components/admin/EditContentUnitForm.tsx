@@ -10,6 +10,15 @@ type ContentUnit = {
   source_type: string;
   publication_year: number | null;
   status: string;
+  // Article-specific fields
+  publication?: string | null;
+  volume?: string | null;
+  issue?: string | null;
+  pages?: string | null;
+  doi?: string | null;
+  url?: string | null;
+  // Book fields
+  edition?: string | null;
 };
 
 type Props = {
@@ -22,6 +31,7 @@ export function EditContentUnitForm({ contentUnit }: Props) {
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Core fields
   const [title, setTitle] = useState(contentUnit.title);
   const [author, setAuthor] = useState(contentUnit.author);
   const [sourceType, setSourceType] = useState(contentUnit.source_type);
@@ -30,21 +40,52 @@ export function EditContentUnitForm({ contentUnit }: Props) {
   );
   const [status, setStatus] = useState(contentUnit.status);
 
+  // Article-specific fields
+  const [publication, setPublication] = useState(contentUnit.publication || "");
+  const [volume, setVolume] = useState(contentUnit.volume || "");
+  const [issue, setIssue] = useState(contentUnit.issue || "");
+  const [pages, setPages] = useState(contentUnit.pages || "");
+  const [doi, setDoi] = useState(contentUnit.doi || "");
+  const [url, setUrl] = useState(contentUnit.url || "");
+
+  // Book fields
+  const [edition, setEdition] = useState(contentUnit.edition || "");
+
+  const isArticle = sourceType === "article";
+  const isBook = sourceType === "book";
+
   const handleSave = async () => {
     setIsSaving(true);
     setError(null);
 
     try {
+      const payload: Record<string, unknown> = {
+        title,
+        author,
+        source_type: sourceType,
+        publication_year: publicationYear ? parseInt(publicationYear) : null,
+        status,
+      };
+
+      // Add article-specific fields
+      if (isArticle) {
+        payload.publication = publication || null;
+        payload.volume = volume || null;
+        payload.issue = issue || null;
+        payload.pages = pages || null;
+        payload.doi = doi || null;
+        payload.url = url || null;
+      }
+
+      // Add book fields
+      if (isBook) {
+        payload.edition = edition || null;
+      }
+
       const response = await fetch(`/api/admin/content-units/${contentUnit.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          title,
-          author,
-          source_type: sourceType,
-          publication_year: publicationYear ? parseInt(publicationYear) : null,
-          status,
-        }),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
@@ -67,6 +108,13 @@ export function EditContentUnitForm({ contentUnit }: Props) {
     setSourceType(contentUnit.source_type);
     setPublicationYear(contentUnit.publication_year?.toString() || "");
     setStatus(contentUnit.status);
+    setPublication(contentUnit.publication || "");
+    setVolume(contentUnit.volume || "");
+    setIssue(contentUnit.issue || "");
+    setPages(contentUnit.pages || "");
+    setDoi(contentUnit.doi || "");
+    setUrl(contentUnit.url || "");
+    setEdition(contentUnit.edition || "");
     setError(null);
     setIsEditing(false);
   };
@@ -100,6 +148,49 @@ export function EditContentUnitForm({ contentUnit }: Props) {
             <span className="text-gray-400">Publication Year:</span>{" "}
             <span>{contentUnit.publication_year || "Unknown"}</span>
           </div>
+
+          {/* Article-specific display */}
+          {contentUnit.source_type === "article" && (
+            <>
+              {contentUnit.publication && (
+                <div>
+                  <span className="text-gray-400">Publication:</span>{" "}
+                  <span>{contentUnit.publication}</span>
+                </div>
+              )}
+              {(contentUnit.volume || contentUnit.issue) && (
+                <div>
+                  <span className="text-gray-400">Vol/Issue:</span>{" "}
+                  <span>
+                    {contentUnit.volume && `Vol. ${contentUnit.volume}`}
+                    {contentUnit.volume && contentUnit.issue && ", "}
+                    {contentUnit.issue && `No. ${contentUnit.issue}`}
+                  </span>
+                </div>
+              )}
+              {contentUnit.pages && (
+                <div>
+                  <span className="text-gray-400">Pages:</span>{" "}
+                  <span>{contentUnit.pages}</span>
+                </div>
+              )}
+              {contentUnit.doi && (
+                <div>
+                  <span className="text-gray-400">DOI:</span>{" "}
+                  <span className="font-mono text-xs">{contentUnit.doi}</span>
+                </div>
+              )}
+            </>
+          )}
+
+          {/* Book-specific display */}
+          {contentUnit.source_type === "book" && contentUnit.edition && (
+            <div>
+              <span className="text-gray-400">Edition:</span>{" "}
+              <span>{contentUnit.edition}</span>
+            </div>
+          )}
+
           <div>
             <span className="text-gray-400">Status:</span>{" "}
             <span
@@ -188,7 +279,99 @@ export function EditContentUnitForm({ contentUnit }: Props) {
             <option value="published">Published</option>
           </select>
         </div>
+
+        {/* Book-specific fields */}
+        {isBook && (
+          <div>
+            <label className="block text-sm text-gray-400 mb-1">Edition</label>
+            <input
+              type="text"
+              value={edition}
+              onChange={(e) => setEdition(e.target.value)}
+              placeholder="e.g., 3rd"
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:border-blue-500"
+            />
+          </div>
+        )}
       </div>
+
+      {/* Article-specific fields */}
+      {isArticle && (
+        <div className="mt-6 pt-6 border-t border-gray-700">
+          <h3 className="text-sm font-semibold text-gray-300 mb-4">
+            Article Details
+          </h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="md:col-span-2">
+              <label className="block text-sm text-gray-400 mb-1">
+                Publication / Journal
+              </label>
+              <input
+                type="text"
+                value={publication}
+                onChange={(e) => setPublication(e.target.value)}
+                placeholder="e.g., Harvard Business Review"
+                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:border-blue-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm text-gray-400 mb-1">Volume</label>
+              <input
+                type="text"
+                value={volume}
+                onChange={(e) => setVolume(e.target.value)}
+                placeholder="e.g., 13"
+                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:border-blue-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm text-gray-400 mb-1">Issue</label>
+              <input
+                type="text"
+                value={issue}
+                onChange={(e) => setIssue(e.target.value)}
+                placeholder="e.g., 3"
+                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:border-blue-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm text-gray-400 mb-1">Pages</label>
+              <input
+                type="text"
+                value={pages}
+                onChange={(e) => setPages(e.target.value)}
+                placeholder="e.g., 277-300"
+                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:border-blue-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm text-gray-400 mb-1">DOI</label>
+              <input
+                type="text"
+                value={doi}
+                onChange={(e) => setDoi(e.target.value)}
+                placeholder="e.g., 10.4324/9781410612076"
+                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:border-blue-500 font-mono text-sm"
+              />
+            </div>
+
+            <div className="md:col-span-2">
+              <label className="block text-sm text-gray-400 mb-1">URL</label>
+              <input
+                type="url"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                placeholder="https://..."
+                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:border-blue-500"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="flex gap-2 mt-6">
         <button

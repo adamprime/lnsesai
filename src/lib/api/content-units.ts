@@ -9,6 +9,15 @@ export type ContentUnitUpdate = {
   source_type?: "book" | "article" | "video" | "podcast";
   publication_year?: number | null;
   status?: "draft" | "published";
+  // Article-specific fields
+  publication?: string | null;
+  volume?: string | null;
+  issue?: string | null;
+  pages?: string | null;
+  doi?: string | null;
+  url?: string | null;
+  // Book fields
+  edition?: string | null;
 };
 
 export type ContentUnitUpdateResult = {

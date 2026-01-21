@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { MarkdownContent } from "@/components/MarkdownContent";
 
 type ContentComponent = {
   id: string;
@@ -186,14 +187,12 @@ export function EditComponentCard({ component }: Props) {
           </div>
         </div>
       ) : (
-        /* View Mode */
+        /* View Mode - Render markdown */
         <div>
           <div
-            className={`text-gray-300 text-sm whitespace-pre-wrap ${
-              isExpanded ? "" : "max-h-40 overflow-hidden"
-            }`}
+            className={`${isExpanded ? "" : "max-h-60 overflow-hidden"}`}
           >
-            {component.content}
+            <MarkdownContent content={component.content} />
           </div>
           {component.content.length > 500 && (
             <button
@@ -206,13 +205,13 @@ export function EditComponentCard({ component }: Props) {
           {component.explanation && (
             <div className="mt-3 text-sm border-t border-gray-700 pt-3">
               <span className="text-gray-400 font-medium">Explanation: </span>
-              <span className="text-gray-300">{component.explanation}</span>
+              <MarkdownContent content={component.explanation} className="inline" />
             </div>
           )}
           {component.examples && (
             <div className="mt-2 text-sm">
               <span className="text-gray-400 font-medium">Examples: </span>
-              <span className="text-gray-300">{component.examples}</span>
+              <MarkdownContent content={component.examples} className="inline" />
             </div>
           )}
         </div>
