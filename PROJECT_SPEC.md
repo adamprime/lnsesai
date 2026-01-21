@@ -1,14 +1,15 @@
-# LensShift Platform - Project Specification
+# Lnses (lnses.ai) - Project Specification
 
 **Version:** 1.0  
 **Date:** 2025-01-14  
-**Status:** Planning
+**Status:** Planning  
+**Domain:** lnses.ai
 
 ---
 
 ## Executive Summary
 
-LensShift Platform is a platform-agnostic knowledge lens service that enables users to generate custom, AI-ready context packages from curated business book and article content. Users interact with a simple chat interface to describe their needs, and the system compiles relevant content units into a "lens" they can copy and paste into any AI chat interface (ChatGPT, Claude, Gemini, Copilot, etc.).
+Lnses is a platform-agnostic knowledge lens service that enables users to generate custom, AI-ready context packages from curated business book and article content. Users interact with a simple chat interface to describe their needs, and the system compiles relevant content units into a "lens" they can copy and paste into any AI chat interface (ChatGPT, Claude, Gemini, Copilot, etc.).
 
 ### Core Value Proposition
 
@@ -27,7 +28,7 @@ LensShift Platform is a platform-agnostic knowledge lens service that enables us
 | **Authentication** | Clerk (existing) | Already configured with wildcard domain for alignmentengines.com |
 | **Frontend** | TBD (likely Next.js or React + Vite) | Modern, fast, good DX |
 | **Hosting** | TBD (Vercel, Netlify, or Railway) | Depends on frontend choice |
-| **Repository** | New repo: `lensshift-platform` | Clean separation from legacy Alignment Engines app |
+| **Repository** | New repo: `lnses` | Clean separation from legacy Alignment Engines app |
 
 ### Key Design Principles
 
@@ -334,8 +335,8 @@ CREATE INDEX idx_component_tags_tag ON component_tags(tag_id);
    - Could use embeddings for semantic search
    - Could be simpler keyword/tag matching initially
 
-4. **Domain**: Will this live at a subdomain of alignmentengines.com or separate domain?
-   - e.g., `lenses.alignmentengines.com` or `lensshift.io`
+4. ~~**Domain**: Will this live at a subdomain of alignmentengines.com or separate domain?~~
+   - **RESOLVED**: lnses.ai
 
 5. **Legacy cleanup timing**: When to dismantle old infrastructure?
    - After Phase 1 (once content is safely migrated)?
