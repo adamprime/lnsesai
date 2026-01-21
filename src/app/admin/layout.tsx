@@ -2,12 +2,7 @@ import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-
-const ADMIN_EMAILS = [
-  "adam@tervort.org",
-  "charles.thomas809@gmail.com",
-  "jfboyce57@gmail.com",
-];
+import { isAdminEmail } from "@/lib/admin";
 
 export default async function AdminLayout({
   children,
@@ -22,7 +17,7 @@ export default async function AdminLayout({
 
   // Check if user email is in admin allowlist
   const userEmail = user.emailAddresses[0]?.emailAddress;
-  if (!userEmail || !ADMIN_EMAILS.includes(userEmail.toLowerCase())) {
+  if (!isAdminEmail(userEmail)) {
     redirect("/");
   }
 
