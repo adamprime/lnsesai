@@ -3,6 +3,12 @@ import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
+const ADMIN_EMAILS = [
+  "adam@tervort.org",
+  "charles.thomas809@gmail.com",
+  "jfboyce57@gmail.com",
+];
+
 export default async function AdminLayout({
   children,
 }: {
@@ -14,8 +20,11 @@ export default async function AdminLayout({
     redirect("/sign-in");
   }
 
-  // TODO: Add admin role check here when needed
-  // For now, any authenticated user can access admin
+  // Check if user email is in admin allowlist
+  const userEmail = user.emailAddresses[0]?.emailAddress;
+  if (!userEmail || !ADMIN_EMAILS.includes(userEmail.toLowerCase())) {
+    redirect("/");
+  }
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
