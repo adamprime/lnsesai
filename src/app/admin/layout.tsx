@@ -50,6 +50,12 @@ export default async function AdminLayout({
           </div>
         </div>
         <div className="flex items-center gap-4">
+          <Link
+            href="/dashboard"
+            className="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-sm transition"
+          >
+            Back to App
+          </Link>
           <span className="text-gray-400 text-sm">
             {user.firstName || user.emailAddresses[0]?.emailAddress}
           </span>
