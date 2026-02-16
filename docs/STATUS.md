@@ -1,5 +1,5 @@
 # Project Status
-<!-- Updated: 2026-02-09 by Adam -->
+<!-- Updated: 2026-02-16 by Adam -->
 
 ## Project Overview
 
@@ -8,8 +8,8 @@
 ## Current State
 
 **Phase:** Admin Interface Complete, Customer Interface Pending
-**Last Session:** 2026-02-09
-**Last Session Summary:** Initial docs structure created via /init-project-docs
+**Last Session:** 2026-02-16
+**Last Session Summary:** Processed 22 new books from John's batch; created response doc for John covering prioritization, weighting, and multi-lens questions
 
 ## What's Working
 
@@ -27,7 +27,7 @@
 
 | Item | Status | Branch | Notes |
 |------|--------|--------|-------|
-|      |        |        |       |
+| New book batch (22 books) | Waiting on John | main | Split into individual files; 3 untagged, 6 partially tagged, 6 with errors. Waiting for John's corrections before Supabase upload. |
 
 ## What's Next
 
@@ -40,7 +40,8 @@
 
 | Decision | Options Considered | Leaning Toward | Blocking? |
 |----------|--------------------|----------------|-----------|
-|          |                    |                |           |
+| Book sequencing within lenses | Add display_order to tag assignments vs. keyword routing logic | display_order field | No -- future feature for chat interface |
+| Two-tier vs. three-tier weighting | Weight 1/3 (two tier) vs. 1/2/3 | Two tier (1 and 3) | No |
 
 ## Known Issues
 
@@ -74,6 +75,12 @@
 Server Components by default. Business logic in `src/lib/api/`. Admin access via email allowlist in `src/lib/admin.ts`.
 
 ## Session Log
+
+### 2026-02-16
+- **Goal:** Process new batch of 22 books; respond to John's prioritization questions
+- **Accomplished:** Split 22 books into individual files (lenses/new-individual/); created CSV overview (lenses/new-books-overview.csv); drafted response to John (docs/john-response-book-prioritization.md) covering weighting, multi-lens support, sequencing, and keyword routing
+- **Didn't finish:** Supabase upload -- blocked on John reviewing untagged books and incorrect summaries
+- **Discovered:** 3 books completely untagged, 6 with only one tag, 6 with errors (wrong summaries, typos, misspelled authors). AI analysis tool sometimes matches wrong books.
 
 ### 2026-02-09
 - **Goal:** Initialize compound engineering docs structure
