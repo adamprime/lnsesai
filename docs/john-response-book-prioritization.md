@@ -138,23 +138,20 @@ I reviewed all 17 originally flagged items more carefully. Most are fine. Here's
 - **Persuasion in High-Stakes Settings** (HBR Editors) -- drawn from HBR's Influence and Persuasion series. Content is on-topic. No action needed.
 - **Innovation in Scarcity Environments** (HBR Editors) -- synthesized from HBR's innovation collection. Content is on-topic. No action needed.
 
-**Duplicate entry -- should drop one:**
+**Duplicate entry -- RESOLVED:**
 
-- **Teams Learning vs Performance** AND **Teams Prioritizing Learning vs Performance** (Harvey, J. F., & Sohn, W.) -- These appear to be the same academic paper entered under two slightly different titles. John, which one should we keep? Or keep both and you'll merge in the admin?
+- **Teams Learning vs Performance** AND **Teams Prioritizing Learning vs Performance** (Harvey, J. F., & Sohn, W.) -- Duplicate. Per John: keeping "Teams Learning vs Performance", deleted "Teams Prioritizing Learning vs Performance" from Supabase.
 
-**Genuinely wrong content -- need to be redone (6 total):**
+**Wrong content -- ignoring for now per John (2026-02-18):**
 
-- **How Biases Damage Judgment** (HBR Editors) -- AI summarized Kahneman's "Heuristics and Biases" textbook instead of the actual HBR piece. Needs redo.
+These 6 books have wrong AI summaries. John confirmed to ignore them for now:
 
-- **Leading Change Begins with Changing Yourself** (Beer, M.) -- AI summarized Beer's "Leading Change" book instead of the specific article. Needs redo.
-
-- **How to Manage a Cross-Functional Team** (Mortensen, M., & Haas, M.) -- AI summarized "The Secrets of Great Teamwork" instead of this piece. Needs redo.
-
-- **The Culture Advantage** (Morris, I.) -- AI confused it with Lencioni's "The Advantage." Needs redo.
-
-- **The Culture Puzzle** (Groysberg, B. et al.) -- AI summarized "The Leader's Guide to Corporate Culture" instead. Needs redo.
-
-- **The Power of Agency in Influence** (Rucker, D. & Galinsky, A.) -- AI confused two different works. Needs redo.
+- How Biases Damage Judgment (HBR Editors)
+- Leading Change Begins with Changing Yourself (Beer, M.)
+- How to Manage a Cross-Functional Team (Mortensen, M., & Haas, M.)
+- The Culture Advantage (Morris, I.)
+- The Culture Puzzle (Groysberg, B. et al.)
+- The Power of Agency in Influence (Rucker, D. & Galinsky, A.)
 
 **Already on the ignore list:**
 

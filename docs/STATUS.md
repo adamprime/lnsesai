@@ -27,7 +27,7 @@
 
 | Item | Status | Branch | Notes |
 |------|--------|--------|-------|
-| New book batch (124 books) | Uploaded to Supabase | main | 113 new content units, 771 components, 11 new tags, 135 tag assignments created. 6 books with wrong content flagged for John to redo. John adjusting weights/lenses in admin UI. |
+| New book batch (124 books) | Uploaded to Supabase | main | 112 content units live (removed 1 duplicate). 5 books getting redone, 6 wrong-content books ignored for now. John adjusting weights/lenses in admin UI. |
 
 ## What's Next
 
