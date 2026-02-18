@@ -14,7 +14,7 @@
 ## What's Working
 
 - Database schema and Supabase setup
-- 243 content units migrated with 1,207 components and 30 tags
+- 355 content units with ~1,978 components and 41 tags
 - Admin authentication with email allowlist
 - Full admin CRUD interface (TDD with 43 tests)
 - Edit content unit metadata (books, articles, videos, podcasts)
@@ -27,7 +27,7 @@
 
 | Item | Status | Branch | Notes |
 |------|--------|--------|-------|
-| New book batch (124 books) | Waiting on John | main | 124 books split into individual files. First batch corrections applied. 17 flagged in new export for John to review. 5 getting redone. Waiting on John before Supabase upload. |
+| New book batch (124 books) | Uploaded to Supabase | main | 113 new content units, 771 components, 11 new tags, 135 tag assignments created. 6 books with wrong content flagged for John to redo. John adjusting weights/lenses in admin UI. |
 
 ## What's Next
 
@@ -77,10 +77,10 @@ Server Components by default. Business logic in `src/lib/api/`. Admin access via
 ## Session Log
 
 ### 2026-02-16
-- **Goal:** Process new book batches; respond to John's prioritization questions
-- **Accomplished:** Split 124 books into individual files (lenses/new-individual/) from two exports. Applied John's first-round corrections (tags, author names, title typos). Identified 17 flagged books in second export for John to review. Updated response doc with full status.
-- **Didn't finish:** Supabase upload -- blocked on John reviewing 17 flagged books and 5 getting redone. Next step: once John confirms, run generator + migrate_catalog.
-- **Discovered:** AI analysis tool frequently confuses similar titles, summarizes wrong books, and flags articles vs books. ~14% error rate on the new batch.
+- **Goal:** Process new book batches; respond to John's prioritization questions; upload to Supabase
+- **Accomplished:** Split 124 books into individual files. Applied John's corrections. Generated catalog (28 tags, 124 books). Uploaded to Supabase: 113 new content units, 771 components, 11 new tags, 135 tag assignments. Updated migrate_catalog.py to accept --catalog arg. Refined flagged list: only 6 books genuinely wrong (not 17).
+- **Didn't finish:** 6 books with wrong AI summaries need redoing by John. 5 books from first batch getting redone. John to adjust weights/lenses in admin UI.
+- **Discovered:** Most "flagged" items were actually fine (articles or right-topic content from slightly different source). Real error rate ~5% not 14%.
 
 ### 2026-02-09
 - **Goal:** Initialize compound engineering docs structure

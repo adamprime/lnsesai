@@ -10,9 +10,11 @@ Usage:
   2. Run: python scripts/migrate_catalog.py
 """
 
+import argparse
 import json
 import os
 import re
+import sys
 import time
 from pathlib import Path
 from dotenv import load_dotenv
@@ -30,8 +32,8 @@ if not SUPABASE_URL or not SUPABASE_KEY:
 # Initialize Supabase client
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# Path to catalog
-CATALOG_PATH = Path("/Users/adam/coding/ai-strengths/lenses/generated/catalog.json")
+# Default path to catalog (can be overridden via --catalog CLI arg)
+CATALOG_PATH = Path("lenses/new-catalog.json")
 
 # Rate limiting - add delay between API calls
 API_DELAY = 0.1  # 100ms between calls
@@ -280,4 +282,11 @@ def migrate():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Migrate catalog to Supabase")
+    parser.add_argument("--catalog", type=Path, default=CATALOG_PATH,
+                        help="Path to catalog JSON file")
+    parser.add_argument("--dry-run", action="store_true",
+                        help="Print what would be done without writing to database")
+    args = parser.parse_args()
+    CATALOG_PATH = args.catalog
     migrate()

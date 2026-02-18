@@ -87,7 +87,7 @@ These had issues in the AI-generated analysis that I caught during processing. J
 
 ## Update: Full batch processed (124 books total)
 
-We've now processed the second export (102 more books from 021626_export.md) along with the original 22. John's corrections from the first batch have been applied:
+I processed the second export (102 more books from 021626_export.md) along with the original 22. Your corrections from the first batch have been applied:
 
 - How Creativity Works -> tagged "Creativity", author fixed to "Burstein"
 - Managing Diversity -> tagged "Teaming"
@@ -97,9 +97,9 @@ We've now processed the second export (102 more books from 021626_export.md) alo
 - Change Forces with a Vengeance -> title typo fixed
 - All single-tag books confirmed as OK per John
 
-### Books John said to ignore (AI couldn't find them)
+### Sources to ignore (AI couldn't find them)
 
-These weren't in the original 22-book batch. Some showed up in the new 102-book export but the AI flagged them as not found. We're skipping these per John's instructions:
+These weren't in the original 22-book batch. Some showed up in the new 102-book export but the AI flagged them as not found. We're skipping these per your instructions:
 
 - Sales Teams, Don't Undervalue Face Time -- HBR Editors
 - What Makes a Great Negotiator -- Sezer, O.
@@ -112,7 +112,7 @@ These weren't in the original 22-book batch. Some showed up in the new 102-book 
 - Coaching Leaders -- O'Donovan, D.
 - Coaching in the Flow of Work -- Neely, A.
 
-### Books getting redone by John
+### Books that need to be redone 
 
 - Communicating Change (Larkin & Larkin) -- wrong book summarized
 - The Art of Thinking (Debelli) -- wrong book summarized
@@ -120,43 +120,45 @@ These weren't in the original 22-book batch. Some showed up in the new 102-book 
 - The Cambridge Handbook of Meeting Science -- getting redone
 - Change Forces with a Vengeance -- getting redone
 
-### New flagged books from the 102-book export (for John to review)
+### New flagged books from the 102-book export
 
-The AI tool flagged these 17 books as potentially having wrong or confused content. John, when you get a chance, please scan these and let us know which ones to keep, redo, or drop:
+I reviewed all 17 originally flagged items more carefully. Most are fine. Here's the breakdown:
 
-- **3 Ways Our Brains Undermine Our Ability to Be a Good Leader** (Higgins, E. T.) -- AI notes this appears to be an article, not a book
+**Articles, not books -- but that's fine (our system handles articles):**
 
-- **Being Well Connected Isn't Always Good for Your Career** (Uzzi, B.) -- AI flagged confusion about the source
+- **3 Ways Our Brains Undermine Our Ability to Be a Good Leader** (Higgins, E. T.) -- HBR article. Summary and themes look good. No action needed.
+- **The Most Effective Negotiation Tactic, According to AI** (Park, S.) -- HBR article. Summary and themes look good. No action needed.
+- **Being Well Connected Isn't Always Good for Your Career** (Uzzi, B.) -- Academic article. Summary and themes look good. No action needed.
 
-- **How Biases Damage Judgment** (HBR Editors) -- AI says the content is actually about Kahneman's "Heuristics and Biases" book, not a standalone HBR piece
+**Content is usable -- AI found the right topic, just slightly different source title:**
 
-- **How to Manage a Cross-Functional Team** (Mortensen, M., & Haas, M.) -- AI flagged confusion about the source
+- **Fix Your Culture by Starting With Habits** (HBR Editors) -- drawn from HBR's 10 Must Reads on Culture. Content is on-topic. No action needed.
+- **The Neuroscience of Influence** (HBR Editors) -- drawn from HBR's influence/persuasion collection. Content is on-topic. No action needed.
+- **When Your Leadership Style Doesn't Match Culture** (HBR Editors) -- AI found the right topic area. Content is on-topic. No action needed.
+- **Persuasion in High-Stakes Settings** (HBR Editors) -- drawn from HBR's Influence and Persuasion series. Content is on-topic. No action needed.
+- **Innovation in Scarcity Environments** (HBR Editors) -- synthesized from HBR's innovation collection. Content is on-topic. No action needed.
 
-- **Innovation in Scarcity Environments** (HBR Editors) -- AI couldn't find a specific book or article with this title
+**Duplicate entry -- should drop one:**
 
-- **Leading Change Begins with Changing Yourself** (Beer, M.) -- AI notes discrepancy with the actual source
+- **Teams Learning vs Performance** AND **Teams Prioritizing Learning vs Performance** (Harvey, J. F., & Sohn, W.) -- These appear to be the same academic paper entered under two slightly different titles. John, which one should we keep? Or keep both and you'll merge in the admin?
 
-- **Persuasion in High-Stakes Settings** (HBR Editors) -- AI says the content is actually about HBR's "Influence and Persuasion" collection
+**Genuinely wrong content -- need to be redone (6 total):**
 
-- **Teams Learning vs Performance** (Harvey, J. F., & Sohn, W.) -- AI couldn't find this as a complete book; looks like it's an academic paper
+- **How Biases Damage Judgment** (HBR Editors) -- AI summarized Kahneman's "Heuristics and Biases" textbook instead of the actual HBR piece. Needs redo.
 
-- **Teams Prioritizing Learning vs Performance** (Harvey, J. F., & Sohn, W.) -- Same issue as above, and appears to be a duplicate entry
+- **Leading Change Begins with Changing Yourself** (Beer, M.) -- AI summarized Beer's "Leading Change" book instead of the specific article. Needs redo.
 
-- **The Culture Advantage** (Morris, I.) -- AI flagged confusion about the actual book
+- **How to Manage a Cross-Functional Team** (Mortensen, M., & Haas, M.) -- AI summarized "The Secrets of Great Teamwork" instead of this piece. Needs redo.
 
-- **The Culture Puzzle** (Groysberg, B. et al.) -- AI notes the actual title may be different from what was searched
+- **The Culture Advantage** (Morris, I.) -- AI confused it with Lencioni's "The Advantage." Needs redo.
 
-- **The Most Effective Negotiation Tactic, According to AI** (Park, S.) -- This is an article, not a book
+- **The Culture Puzzle** (Groysberg, B. et al.) -- AI summarized "The Leader's Guide to Corporate Culture" instead. Needs redo.
 
-- **The Neuroscience of Influence** (HBR Editors) -- AI noted confusion about the exact title/source
+- **The Power of Agency in Influence** (Rucker, D. & Galinsky, A.) -- AI confused two different works. Needs redo.
 
-- **The Power of Agency in Influence** (Rucker, D. & Galinsky, A.) -- AI flagged discrepancy with the source material
+**Already on the ignore list:**
 
-- **When Your Leadership Style Doesn't Match Culture** (HBR Editors) -- AI noted the content seems imprecise
-
-- **Fix Your Culture by Starting With Habits** (HBR Editors) -- AI noted this appears to be part of an HBR collection, not a standalone piece
-
-- **Sales Teams, Don't Undervalue Face Time** (HBR Editors) -- This one is on John's "ignore" list but did show up in the export with a confused summary
+- **Sales Teams, Don't Undervalue Face Time** (HBR Editors) -- On the ignore list. Showed up in the export with a confused summary. Will be excluded.
 
 ### John's note about levels and lenses
 
