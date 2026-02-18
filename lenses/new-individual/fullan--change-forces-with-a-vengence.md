@@ -1,4 +1,4 @@
-# Change Forces with a Vengence
+# Change Forces with a Vengeance
 **Author:** Fullan
 
 **Tags:** Managing Change, nan

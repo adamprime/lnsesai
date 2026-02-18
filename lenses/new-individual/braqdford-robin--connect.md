@@ -1,5 +1,5 @@
 # Connect
-**Author:** Braqdford, Robin
+**Author:** Bradford, Robin
 
 **Tags:** Selling, nan
 

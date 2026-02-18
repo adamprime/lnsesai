@@ -1,4 +1,4 @@
-# The Cambridge Handbook of Meeting Sciencwe
+# The Cambridge Handbook of Meeting Science
 **Author:** Allen, Lehmann-Willenbrock
 
 **Tags:** Management, Meetings

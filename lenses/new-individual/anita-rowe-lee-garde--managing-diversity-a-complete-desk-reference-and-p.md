@@ -1,7 +1,7 @@
 # Managing Diversity: A Complete Desk Reference and Planning Guide
 **Author:** Anita Rowe, Lee Gardenswartz
 
-**Tags:** nan, nan
+**Tags:** Teaming
 
 ## Summary
 
@@ -49,7 +49,6 @@ The significance of this work lies in its timing and comprehensive approach. Pub
 **Explanation:** Beyond increasing numerical representation, organizations must create inclusive environments where all employees feel valued and can contribute their full potential. This requires addressing both overt and subtle barriers to inclusion.
 **Examples:** The authors provide guidance on identifying and eliminating systemic barriers, creating mentoring programs, developing inclusive communication practices, and building cross-cultural competence among managers and employees.
 
-Tags: nan, nan
-
+Tags: Teaming
 ---
 

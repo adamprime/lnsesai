@@ -82,3 +82,82 @@ These had issues in the AI-generated analysis that I caught during processing. J
 - **The Cambridge Handbook of Meeting Sciencwe** -- Typo in the title: "Sciencwe" should be "Science."
 
 - **Change Forces with a Vengence** -- Typo in the title: "Vengence" should be "Vengeance."
+
+---
+
+## Update: Full batch processed (124 books total)
+
+We've now processed the second export (102 more books from 021626_export.md) along with the original 22. John's corrections from the first batch have been applied:
+
+- How Creativity Works -> tagged "Creativity", author fixed to "Burstein"
+- Managing Diversity -> tagged "Teaming"
+- Return of the Mentor -> tagged "HR"
+- Connect -> author fixed to "Bradford"
+- Cambridge Handbook of Meeting Science -> title typo fixed
+- Change Forces with a Vengeance -> title typo fixed
+- All single-tag books confirmed as OK per John
+
+### Books John said to ignore (AI couldn't find them)
+
+These weren't in the original 22-book batch. Some showed up in the new 102-book export but the AI flagged them as not found. We're skipping these per John's instructions:
+
+- Sales Teams, Don't Undervalue Face Time -- HBR Editors
+- What Makes a Great Negotiator -- Sezer, O.
+- To Negotiate Better, Start with Yourself -- Galinsky, A.
+- Most Leaders Don't Celebrate Their Wins -- McGregor, L.
+- Psychology of Persuasion in Modern Work -- Syal, R.
+- Stop Making Unconscious Tradeoffs -- HBR Editors
+- Why Smart People Make Bad Decisions -- HBR Editors
+- Empowerment Through Coaching -- Stosny, S.
+- Coaching Leaders -- O'Donovan, D.
+- Coaching in the Flow of Work -- Neely, A.
+
+### Books getting redone by John
+
+- Communicating Change (Larkin & Larkin) -- wrong book summarized
+- The Art of Thinking (Debelli) -- wrong book summarized
+- Connect (Bradford, Robin) -- getting redone, will stay under Selling
+- The Cambridge Handbook of Meeting Science -- getting redone
+- Change Forces with a Vengeance -- getting redone
+
+### New flagged books from the 102-book export (for John to review)
+
+The AI tool flagged these 17 books as potentially having wrong or confused content. John, when you get a chance, please scan these and let us know which ones to keep, redo, or drop:
+
+- **3 Ways Our Brains Undermine Our Ability to Be a Good Leader** (Higgins, E. T.) -- AI notes this appears to be an article, not a book
+
+- **Being Well Connected Isn't Always Good for Your Career** (Uzzi, B.) -- AI flagged confusion about the source
+
+- **How Biases Damage Judgment** (HBR Editors) -- AI says the content is actually about Kahneman's "Heuristics and Biases" book, not a standalone HBR piece
+
+- **How to Manage a Cross-Functional Team** (Mortensen, M., & Haas, M.) -- AI flagged confusion about the source
+
+- **Innovation in Scarcity Environments** (HBR Editors) -- AI couldn't find a specific book or article with this title
+
+- **Leading Change Begins with Changing Yourself** (Beer, M.) -- AI notes discrepancy with the actual source
+
+- **Persuasion in High-Stakes Settings** (HBR Editors) -- AI says the content is actually about HBR's "Influence and Persuasion" collection
+
+- **Teams Learning vs Performance** (Harvey, J. F., & Sohn, W.) -- AI couldn't find this as a complete book; looks like it's an academic paper
+
+- **Teams Prioritizing Learning vs Performance** (Harvey, J. F., & Sohn, W.) -- Same issue as above, and appears to be a duplicate entry
+
+- **The Culture Advantage** (Morris, I.) -- AI flagged confusion about the actual book
+
+- **The Culture Puzzle** (Groysberg, B. et al.) -- AI notes the actual title may be different from what was searched
+
+- **The Most Effective Negotiation Tactic, According to AI** (Park, S.) -- This is an article, not a book
+
+- **The Neuroscience of Influence** (HBR Editors) -- AI noted confusion about the exact title/source
+
+- **The Power of Agency in Influence** (Rucker, D. & Galinsky, A.) -- AI flagged discrepancy with the source material
+
+- **When Your Leadership Style Doesn't Match Culture** (HBR Editors) -- AI noted the content seems imprecise
+
+- **Fix Your Culture by Starting With Habits** (HBR Editors) -- AI noted this appears to be part of an HBR collection, not a standalone piece
+
+- **Sales Teams, Don't Undervalue Face Time** (HBR Editors) -- This one is on John's "ignore" list but did show up in the export with a confused summary
+
+### John's note about levels and lenses
+
+John mentioned he'll handle the priority levels (1 or 3) and lens reassignments directly in the database once everything is loaded. That's the easiest path -- get the books in, then he can adjust weights and multi-lens assignments through the admin interface.

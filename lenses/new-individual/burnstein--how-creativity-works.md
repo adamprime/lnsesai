@@ -1,7 +1,7 @@
 # How Creativity Works
-**Author:** Burnstein
+**Author:** Burstein
 
-**Tags:** nan, nan
+**Tags:** Creativity
 
 ## Summary
 
@@ -51,7 +51,6 @@ By presenting creativity as both deeply personal and universally accessible, Bur
 **Explanation:** True creativity requires the ability to look within and recognize the unique "sparks" or sources of inspiration that exist within each individual. This introspective capacity is essential for authentic creative expression.
 **Examples:** The book encourages readers to contemplate "the origin of the little lights" within themselves, suggesting that creativity begins with self-awareness and internal exploration.
 
-Tags: nan, nan
-
+Tags: Creativity
 ---
 

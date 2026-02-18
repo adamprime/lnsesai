@@ -27,7 +27,7 @@
 
 | Item | Status | Branch | Notes |
 |------|--------|--------|-------|
-| New book batch (22 books) | Waiting on John | main | Split into individual files; 3 untagged, 6 partially tagged, 6 with errors. Waiting for John's corrections before Supabase upload. |
+| New book batch (124 books) | Waiting on John | main | 124 books split into individual files. First batch corrections applied. 17 flagged in new export for John to review. 5 getting redone. Waiting on John before Supabase upload. |
 
 ## What's Next
 
@@ -77,10 +77,10 @@ Server Components by default. Business logic in `src/lib/api/`. Admin access via
 ## Session Log
 
 ### 2026-02-16
-- **Goal:** Process new batch of 22 books; respond to John's prioritization questions
-- **Accomplished:** Split 22 books into individual files (lenses/new-individual/); created CSV overview (lenses/new-books-overview.csv); drafted response to John (docs/john-response-book-prioritization.md) covering weighting, multi-lens support, sequencing, and keyword routing
-- **Didn't finish:** Supabase upload -- blocked on John reviewing untagged books and incorrect summaries
-- **Discovered:** 3 books completely untagged, 6 with only one tag, 6 with errors (wrong summaries, typos, misspelled authors). AI analysis tool sometimes matches wrong books.
+- **Goal:** Process new book batches; respond to John's prioritization questions
+- **Accomplished:** Split 124 books into individual files (lenses/new-individual/) from two exports. Applied John's first-round corrections (tags, author names, title typos). Identified 17 flagged books in second export for John to review. Updated response doc with full status.
+- **Didn't finish:** Supabase upload -- blocked on John reviewing 17 flagged books and 5 getting redone. Next step: once John confirms, run generator + migrate_catalog.
+- **Discovered:** AI analysis tool frequently confuses similar titles, summarizes wrong books, and flags articles vs books. ~14% error rate on the new batch.
 
 ### 2026-02-09
 - **Goal:** Initialize compound engineering docs structure

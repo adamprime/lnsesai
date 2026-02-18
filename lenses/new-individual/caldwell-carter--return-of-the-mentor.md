@@ -1,7 +1,7 @@
 # Return of the Mentor
 **Author:** Caldwell, Carter
 
-**Tags:** nan, nan
+**Tags:** HR
 
 ## Summary
 
@@ -51,7 +51,6 @@ The book's practical orientation is evident in its focus on nurturing individual
 **Explanation:** By providing historical perspective on mentoring practices, the authors establish continuity between traditional approaches and contemporary applications. This theme supports their argument for mentoring's renewed importance in modern workplaces.
 **Examples:** The book traces mentoring from its ancient origins through various historical periods, showing how core principles remain relevant while implementation strategies evolve to meet contemporary challenges.
 
-Tags: nan, nan
-
+Tags: HR
 ---
 
