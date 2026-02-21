@@ -1,9 +1,7 @@
-# Meetings Lens
-_Generated: 2026-02-21T15:37:38.131472+00:00_
-
-## The Cambridge Handbook of Meeting Science
+# The Cambridge Handbook of Meeting Science
 **Author:** Allen, Lehmann-Willenbrock
-**Source Files:** allen-lehmann-willen--the-cambridge-handbook-of-meeting-science.md, allen-lehmann-willen--the-cambridge-handbook-of-meeting-sciencwe.md
+
+**Tags:** Management, Meetings
 
 ## Summary
 

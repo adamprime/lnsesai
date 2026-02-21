@@ -1,5 +1,5 @@
 # Change Management Lens
-_Generated: 2026-02-19T22:55:53.401539+00:00_
+_Generated: 2026-02-21T15:37:38.131472+00:00_
 
 ## Change
 **Author:** Kotter, J., Akhtar, V., & Gupta, G.

@@ -1,5 +1,5 @@
 # Teaming Lens
-_Generated: 2026-02-19T22:55:53.401539+00:00_
+_Generated: 2026-02-21T15:37:38.131472+00:00_
 
 ## Managing Diversity: A Complete Desk Reference and Planning Guide
 **Author:** Anita Rowe, Lee Gardenswartz
